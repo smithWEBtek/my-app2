@@ -22,7 +22,7 @@ const MOUNT13 = document.querySelector('div#root13');
 const MOUNT14 = document.querySelector('div#root14');
 const MOUNT15 = document.querySelector('div#root15');
 const MOUNT16 = document.querySelector('div#root16');
-const FishTacoElephantDung1 = document.querySelector('div#dung1');
+const Boxes1 = document.querySelector('div#checkboxes');
 
 const HelloElement = React.createElement('div', {}, "Hello element created when const was declared.");
 
@@ -60,7 +60,7 @@ const Hello4 = React.createElement('div', {}, "this is the Hello4 const, using R
 ReactDOM.render(Hello4, MOUNT8)
 
 
-const Hello3 = (props) => <div>Hello3, {props.name} from React</div>
+const Hello3 = (props) => <p>Hello3, {props.name} from React</p>
 const Hello3props = (props) => <div>Hello3, {props.dog} from React {props.color} with props: {props.name}</div>
 const Hello3destructured = ({name, dog, color}) => <div>Hello3destructured with {color} props {dog} destructured: {name}</div>
 const Hello3schnaps = (schnaps) => <div>Hello3destructured **{schnaps.bird}**  with **{schnaps.color}** props **{schnaps.dog}** destructured: **{schnaps.name}**</div>
@@ -70,11 +70,28 @@ ReactDOM.render(<Hello3props name="Brad" color="Blue" dog="spot"/>, MOUNT14)
 ReactDOM.render(<Hello3destructured name="Brad" color="Blueish " dog="spot" />, MOUNT15)
 ReactDOM.render(<Hello3schnaps name="Jimminy Glick" color="pinkish " dog="fido" bird={birdy} />, MOUNT16)
 
-const Pets = ['turtle', 'lobster', 'lemur', 'ferret', 'cat', 'dog', 'fish', 'bird', 'hamster']
+const Pets = ['turtle', 'lobster', 'lobster', 'lemur', 'ferret', 'cat', 'dog', 'fish', 'bird']
+const Colors = ['red','green','blue','violet', 'yellow', 'orange', 'black', 'turquoise', 'magenta', 'aqua']
+
 
 const HiPets = () => (
   <div className='App'>
-    {Pets.map(pet => <p><Hello3 name={pet} /></p>)}
+    <ul>
+      {Pets.map(pet => (
+        <li><Hello3 
+        name={pet} 
+        key={pet} /></li>)
+      )}
+    </ul>
   </div>
 )
+
 ReactDOM.render(<HiPets />, MOUNT12)
+
+{/* 
+const HiPets = () => (
+  <div className='App'><ul>
+    {Pets.map(pet => <li><Hello3 name={pet} /></li>)}
+  </ul></div>
+)
+ReactDOM.render(<HiPets />, MOUNT12) */}
