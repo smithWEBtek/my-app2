@@ -11,9 +11,9 @@ class Flap extends Component {
           <h1 className="App-title">Flap it</h1>
         </header>
         <p className="App-intro">
-          <code>We love to code code, coding the codes.</code>
+          <code>We love to code code, coding the codes.
           Please check one of the meaningless boxes below.<br />
-          We promise that nothing bad will happen...
+          We promise that nothing bad will happen...</code>
         </p>
         <h5>...or will it?</h5>
       </div>
