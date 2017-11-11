@@ -6,12 +6,14 @@ import Flap from './Flap';
 // import GuestbookApp1 from './GuestbookApp';
 // import GuestbookApp2 from './GuestbookApp';
 // import Pythagoras from './Pythagoras';
+import Fizzbuzz from './Fizzbuzz';
 
 // const { Component } = React
 
 const MOUNT1 = document.querySelector('div#root1');
 const MOUNT2 = document.querySelector('div#root2');
 const MOUNT3 = document.querySelector('div#root3');
+const MOUNT4 = document.querySelector('div#root4');
 
 // const names = ['Ari', 'Nate', 'Ginger', 'Anna', 'Sonia']
 
@@ -20,9 +22,6 @@ const MOUNT3 = document.querySelector('div#root3');
  
 ReactDOM.render(<App />, MOUNT1);
 ReactDOM.render(<Flap />, MOUNT2); 
-
-
-
 
 let greeting
 if (new Date().getHours() < 12) {
@@ -37,43 +36,39 @@ else {
 const dayOfWeek = new Date().getDay()
 
 function dayMsg(){
-  let today = null
+  let todayMsg = null
     switch (dayOfWeek){
       case 7:
-       today = "Sunday, rest day"
+       todayMsg = "Sunday, rest day"
       break
       case 1:
-        today = "Somebody has a case of the Mondays!!"
+        todayMsg = "Somebody has a case of the Mondays!!"
       break
       case 2:
-        today = "Tuesday, hmm hmm..."
+        todayMsg = "Tuesday, hmm hmm..."
       break
       case 3:
-        today = "Hump day"
+        todayMsg = "Hump day"
       break
       case 4:
-        today = "Thursday is party anticipation day..."
+        todayMsg = "Thursday is party anticipation day..."
       break
       case 5:
-        today = "TGIF !!"
+        todayMsg = "TGIF !!"
       break
       case 6:
-        today = "Hooray, weekend!!"
+        todayMsg = "Hooray, weekend!!"
       break
     }
-    return today
+    return todayMsg
   }
   
-const Today = React.createElement('div', {}, dayMsg())
-// ReactDOM.render() expects a single element, so if you want to render
-// multiple elements, wrap them in an empty `div`
+const TodayMsg = React.createElement('div', {}, dayMsg())
 const group = ('div', {}, [greeting, dayMsg(dayOfWeek)]);
-
-// If a child is `null`, `false` or `undefined`, React is smart enough
-// to not render anything
 
 ReactDOM.render(
   group,
   MOUNT3
 );
-// ReactDOM.render(<Pythagoras />, MOUNT2); 
+
+ReactDOM.render(Fizzbuzz, MOUNT4); 
